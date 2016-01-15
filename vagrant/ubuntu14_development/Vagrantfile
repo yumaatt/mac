@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version.
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.define :dev1 do |dev1|
+    dev1.vm.box = "ubuntu14_dev1"
+    dev1.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+    dev1.vm.network :private_network, ip: "192.168.1.10"
+		dev1.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777", "fmode=777"]
+    dev1.vm.hostname = "dev1"
+    dev1.vm.provider "virtualbox" do |vb|
+      vb.cpus = "2"
+      vb.memory = "2048" # MB
+      vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  #config.vm.define :dev2 do |dev2|
+  #  dev2.vm.box = "xxx"
+  #  dev2.vm.box_url = "xxx"
+  #  dev2.vm.network :private_network, ip: "192.168.1.11"
+  # dev2.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777", "fmode=777"]
+  #  dev2.vm.hostname = "dev2"
+  #  dev2.vm.provider "virtualbox" do |vb|
+  #    vb.cpus = "2"
+  #    vb.memory = "2048" # MB
+  #    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+  #  end
+  #end
+
+end

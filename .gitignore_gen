@@ -1,0 +1,13 @@
+#!/usr/bin/env bash -eu 
+cd "${0%/*}" && exec > .gitignore
+gibo osx
+gibo linux
+gibo vagrant
+gibo python
+gibo vim
+#cat <<'EOF'
+#
+#.foobar.conf
+#something_*.log
+#
+#EOF
