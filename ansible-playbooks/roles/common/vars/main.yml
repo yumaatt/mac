@@ -1,0 +1,164 @@
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/versions
+  - caskroom/versions
+#  - homebrew/php
+#  - homebrew/apache
+
+homebrew_packages:
+  - { name: ansible }
+  - { name: brew-cask }
+  - { name: colordiff }
+  - { name: xz }
+  - { name: coreutils }
+  - { name: binutils }
+  - { name: findutils }
+  # for emacs flycheck
+  - { name: texinfo }
+  - { name: zsh }
+  - { name: git }
+  - { name: vim }
+  - { name: emacs }
+  - { name: graphviz }
+  - { name: htop-osx }
+  - { name: jq }
+  - { name: hub }
+  - { name: nkf }
+  - { name: openssl }
+  - { name: reattach-to-user-namespace }
+  - { name: rename }
+  - { name: tmux }
+  - { name: tig }
+  - { name: tree }
+  - { name: unrar }
+  - { name: wget }
+  - { name: zsh-completions }
+  - { name: gdbm }
+  - { name: pstree }
+  - { name: libevent }
+  - { name: pcre }
+  - { name: gibo }
+  - { name: readline }
+  - { name: cmake }
+  - { name: autoconf }
+  - { name: automake }
+  - { name: pkg-config }
+  - { name: ctags }
+  - { name: lv }
+  - { name: direnv }
+  - { name: peco }
+  - { name: fish }
+  - { name: ctags }
+  - { name: tofrodos }
+  - { name: lha }
+  - { name: flow }
+  - { name: packer }
+  - { name: socat }
+  - { name: rlwrap }
+  - { name: phantomjs }
+  - { name: autojump }
+  - { name: source-highlight }
+#  - { name: evm }
+#  - { name: boris }
+#  - { name: composer }
+#  - { name: httpd22 }   # php56より前に置く
+#  - { name: mysql }
+#  - { name: node }
+#  - { name: php56, install_options: with-homebrew-apxs }
+#  - { name: php56-intl }
+#  - { name: php56-opcache }
+#  - { name: php56-apcu }
+#  - { name: php56-mcrypt }
+#  - { name: php56-xdebug }
+#  - { name: php56-xhprof }
+#  - { name: phpunit }
+#  - { name: python }
+#  - { name: sl }
+#  - { name: sqlite }
+#  - { name: screen }
+
+homebrew_cask_packages:
+  - avast
+#  - caffeine
+#  - clipmenu
+#  - cooviewer
+#  - dropbox
+#  - eclipse-java
+#  - evernote
+#  - filezilla
+#  - firefox
+#  - flash-player
+#  - google-chrome
+#  - google-drive
+#  - google-japanese-ime
+#  - gyazo
+#  - heroku-toolbelt
+#  - java
+#  - karabiner
+#  - kobito
+#  - libreoffice
+#  - macdown
+#  - phpstorm
+#  - reaper
+#  - slack
+#  - skitch
+#  - skype
+#  - spectacle
+#  - sublime-text
+#  - vagrant
+#  - virtualbox
+#  - vlc
+#  - xmind
+#  - xtrafinder
+
+default_shell:
+  - { user: 'yuma.takahashi', shell: '/usr/local/bin/zsh' }
+
+anyenv_plugins:
+  - anyenv-update
+  - anyenv-git
+
+anyenv:
+  - rbenv
+  - pyenv
+  - plenv
+  - ndenv
+  - crenv
+  - denv
+  - erlenv
+  - exenv
+  - goenv
+  - hsenv
+  - jenv
+  - luaenv
+  - phpenv
+  - Renv
+  - scalaenv
+
+python_versions:
+  - 2.7.5
+  - 2.7.11
+  - 3.3.3
+python_version: 3.3.3
+
+ruby_versions:
+  # for evm
+  - 2.2.0
+  - 2.2.4
+ruby_version: 2.2.4
+
+perl_versions:
+  - 5.16.3
+perl_version: 5.16.3
+
+nodejs_versions:
+  - v0.10.25
+nodejs_version: v0.10.25
+
+go_versions:
+  - 1.5
+go_version: 1.5
+
+ghq_repos:
+  - { user: 'yumaatt', repo: 'hello_app' }
+  - { user: 'yumaatt', repo: 'testrepo' }
