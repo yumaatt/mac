@@ -1,1 +1,1 @@
-todo
+echo 'please read README'
