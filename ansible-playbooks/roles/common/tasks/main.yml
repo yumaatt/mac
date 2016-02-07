@@ -1,22 +1,21 @@
-#- name: install taps of homebrew
-#  homebrew_tap: tap="{{ item }}" state=present
-#  with_items: homebrew_taps
-#
-#- name: update homebrew
-#  homebrew: update_homebrew=yes
-#
-#- name: install homebrew packages
-#  homebrew: name="{{ item.name }}" state="{{ item.state|default('latest') }}" install_options="{{ item.install_options|default() }}"
-#  with_items: homebrew_packages
-#
-#- name: create makeinfo symlink for emacs flycheck
-#  file: src=/usr/local/Cellar/texinfo/6.0/bin/makeinfo dest=/usr/local/bin/makeinfo state=link
-#  become: yes
-#
-#- name: install homebrew cask packages
-#  homebrew_cask: name="{{ item }}" state=present
-#  with_items: homebrew_cask_packages
+- name: install taps of homebrew
+  homebrew_tap: tap="{{ item }}" state=present
+  with_items: homebrew_taps
 
+- name: update homebrew
+  homebrew: update_homebrew=yes
+
+- name: install homebrew packages
+  homebrew: name="{{ item.name }}" state="{{ item.state|default('latest') }}" install_options="{{ item.install_options|default() }}"
+  with_items: homebrew_packages
+
+- name: create makeinfo symlink for emacs flycheck
+  file: src=/usr/local/Cellar/texinfo/6.0/bin/makeinfo dest=/usr/local/bin/makeinfo state=link
+  become: yes
+
+- name: install homebrew cask packages
+  homebrew_cask: name="{{ item }}" state=present
+  with_items: homebrew_cask_packages
 
 - name: install dotfiles
   git: repo=https://github.com/yumaatt/dotfiles.git dest=~/.ghq/github.com/yumaatt/dotfiles update=no
