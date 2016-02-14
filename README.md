@@ -25,9 +25,10 @@ brew update
 
 ```
 brew install ansible
-cd ~/.ghq/github.com/yumaatt/mac/ansible-playbooks
-ansible-playbook -i local site.yml -K --check
-ansible-playbook -i local site.yml -K
+git clone https://github.com/yumaatt/ansible-playbooks.git ~/.ghq/github.com/yumaatt/ansible-playbooks
+cd ~/.ghq/github.com/yumaatt/ansible-playbooks/yumaatt
+ansible-playbook site.yml -i development -l mac -K -C
+ansible-playbook site.yml -i development -l mac -K
 ```
 
 ## install other softwares
