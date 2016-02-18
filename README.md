@@ -27,8 +27,9 @@ brew update
 brew install ansible
 git clone https://github.com/yumaatt/ansible-playbooks.git ~/.ghq/github.com/yumaatt/ansible-playbooks
 cd ~/.ghq/github.com/yumaatt/ansible-playbooks/yumaatt
-ansible-playbook site.yml -i development -l mac -K -C
-ansible-playbook site.yml -i development -l mac -K
+touch private_vars/admin{,-development,-development-mac}.yml
+ansible-playbook site.yml -i hosts -l admin-development-mac -K -C
+ansible-playbook site.yml -i hosts -l admin-development-mac -K
 ```
 
 ## install other softwares
